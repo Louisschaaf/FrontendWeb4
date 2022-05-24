@@ -17,7 +17,7 @@ function App() {
                 <nav>
                     <ul className="nav justify-content-center">
                         <li>
-                            <Link to="/lecturers" className="nav-link px-4 fs-5 text-white">
+                            <Link to="/users" className="nav-link px-4 fs-5 text-white">
                                 Overview
                             </Link>
                         </li>
@@ -32,7 +32,7 @@ function App() {
             <main className="container mt-5">
                 <Routes>
                     <Route path="/" element={<LecturerOverview />} />
-                    <Route path="/lecturers" element={<LecturerOverview />} />
+                    <Route path="/users" element={<LecturerOverview />} />
                 </Routes>
             </main>
         </>

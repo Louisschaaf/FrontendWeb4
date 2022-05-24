@@ -1,8 +1,8 @@
 import React from 'react';
-import { Course } from '../../types';
+/*import { Course } from '../../types';
 
 type Props = {
-    courses: Array<Course>;
+     courses: Array<Course>;
 };
 
 const CoursesOverviewTable: React.FC<Props> = ({ courses }: Props) => {
@@ -33,4 +33,5 @@ const CoursesOverviewTable: React.FC<Props> = ({ courses }: Props) => {
     );
 };
 
-export default CoursesOverviewTable;
+export default CoursesOverviewTable;*/
+export {}
