@@ -15,7 +15,7 @@ return (
             className="fs-2 d-flex justify-content-center mb-2 mb-lg-0 text-white-50 text-decoration-none"
             href="/"
         >
-            UCLL Lecturers
+            Studentbook
         </a>
         
         <nav>
@@ -27,7 +27,7 @@ return (
                 </li>
                 <li>
                     <Link to="/" className="nav-link px-4 fs-5 text-white">
-                        Add lecturer
+                        Add friend
                     </Link>
                 </li>
             </ul>
