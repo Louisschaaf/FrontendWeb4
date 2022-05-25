@@ -1,32 +1,42 @@
 import React, {useState} from 'react';
 import './Login.css';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
-async function loginUser(credentials: { username: string; }) {
-    return fetch('http://localhost:3306/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-    })
-        .then(response => response.json())
-    
-}
+//export default function Login({ setToken }: { setToken: (token: any) => void }) {
+const Login: React.FC = () => {
+    const [username, setUsername] = useState<string>('');
 
-export default function Login({ setToken }: { setToken: (token: string) => void }) {
-    const [username, setUsername] = useState('');
 
+    const loginUser = async ( username: string) => {
+        /*return fetch('http://localhost:3306/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+            .then(response => response.json())
+        */
+       try {
+           console.log(username);
+           const res = await axios.post<Response>('http://localhost:3306/login', {name: username});
+           console.log(res);
+           sessionStorage.setItem('token', JSON.stringify(res.data));
+           window.location.reload();
+           return {status: 'success'};
+       } catch (error: any) {
+           return error;
+       }
+    }
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        console.log(username);
-        let token = await loginUser({username});
+        let token = await loginUser(username);
         if (token["status"] === "error") {
             alert("Wrong username or password");
             token = "error";
         }
-        setToken(token);
-    }
+    };
 
   return(
     <div className="login-wrapper">
@@ -43,8 +53,6 @@ export default function Login({ setToken }: { setToken: (token: string) => void 
       </form>
     </div>
   )
-}
+};
 
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired
-}
+export default Login;
