@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LecturerOverview from './components/lecturer-overview';
+import Login from './components/Login/Login';
 
 function App() {
+    const [token, setToken] = useState('');
+
+    if (!token ||token == "error") {
+        return <Login setToken={setToken} />
+    }
     return (
         <>
             <header className="p-3 mb-3 border-bottom bg-dark bg-gradient">
