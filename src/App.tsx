@@ -5,6 +5,8 @@ import './App.css';
 import LecturerOverview from './components/lecturer-overview';
 import Login from './components/Login/Login';
 import useToken from './components/App/useToken';
+import FriendsOverviewTable from './components/friends/FriendsOverviewTable';
+import FriendOverview from './components/friends/index';
 
 function App() {
 return (
@@ -30,6 +32,11 @@ return (
                         Add friend
                     </Link>
                 </li>
+                <li>
+                    <Link to="/friends" className="nav-link px-4 fs-5 text-white">
+                        Friend overview
+                    </Link>
+                </li>
             </ul>
         </nav>
     </header>
@@ -38,6 +45,7 @@ return (
         <Routes>
             <Route path="/" element={<LecturerOverview />} />
             <Route path="/users" element={<LecturerOverview />} />
+            <Route path="/friends" element={<FriendOverview />} />
         </Routes>
     </main>
         ) : (<Login />)}
