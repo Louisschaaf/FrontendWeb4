@@ -8,7 +8,7 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     
     const loginUser = async ( username: string) => {
-        /*return fetch('http://localhost:3306/login', {
+        /*return fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
