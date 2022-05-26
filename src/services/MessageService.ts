@@ -1,7 +1,7 @@
 import axios from '../axios';
 import { Message, User } from '../types';
 
-const getAllMessages = () => axios.get<Array<Message>>('/messages');
+const getAllMessages = (UserID: number) => axios.get<Array<Message>>('/messages', { params: { UserID }});
 
 const addMessage = (friendID: number) => axios.post<Message>('/friends', { friendID });
 

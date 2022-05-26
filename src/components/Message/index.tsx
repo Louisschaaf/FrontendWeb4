@@ -19,7 +19,7 @@ const MessageOverview: React.FC = () => {
     }, []);
 
     const getAllMessages = async () => {
-        const res: AxiosResponse<Array<Message>> = await MessageService.getAllMessages();
+        const res: AxiosResponse<Array<Message>> = await MessageService.getAllMessages(userID);
         console.log("messages:",res);
         setMessages(res.data);
     };
