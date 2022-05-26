@@ -1,13 +1,13 @@
-/*import axios from '../axios';
-import { User } from '../types';
+import axios from '../axios';
+import { Message, User } from '../types';
 
-const getAllMessages = (UserID: number) => axios.get<Array<User>>('/friends', { params: { UserID } });
+const getAllMessages = () => axios.get<Array<Message>>('/messages');
 
-const addFriend = (friendID: number) => axios.post<User>('/friends', { friendID });
+const addMessage = (friendID: number) => axios.post<Message>('/friends', { friendID });
 
-const FriendsService = {
-    getAllFriends,
-    addFriend,
-};*/
+const MessageService = {
+    getAllMessages,
+    addMessage,
+};
 
-export default null;
+export default MessageService;

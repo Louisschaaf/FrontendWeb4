@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import useToken from './components/App/useToken';
 import FriendsOverviewTable from './components/friends/FriendsOverviewTable';
 import FriendOverview from './components/friends/index';
+import MessageOverview from './components/Message/index';
 
 function App() {
 return (
@@ -19,6 +20,7 @@ return (
                 <li> <Link to="/users" className="nav-link px-4 fs-5 text-white"> Overview </Link></li>
                 <li> <Link to="/" className="nav-link px-4 fs-5 text-white"> Add friend </Link> </li>
                 <li> <Link to="/friends" className="nav-link px-4 fs-5 text-white"> Friend overview </Link> </li>
+                <li> <Link to="/messages" className="nav-link px-4 fs-5 text-white"> Message overview </Link> </li>
             </ul>
         </nav>
     </header>
@@ -28,6 +30,7 @@ return (
             <Route path="/" element={< UserOverview />} />
             <Route path="/users" element={< UserOverview />} />
             <Route path="/friends" element={<FriendOverview />} />
+            <Route path="/messages" element={<MessageOverview  />} />
         </Routes>
     </main>
     ) : (<Login />)}
