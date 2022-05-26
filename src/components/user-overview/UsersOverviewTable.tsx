@@ -3,10 +3,10 @@ import { User } from '../../types';
 
 type Props = {
     users: Array<User>;
-    setSelectedLecturer: (user: User) => void;
+    setSelectedUser: (user: User) => void;
 };
 
-const LecturersOverviewTable: React.FC<Props> = ({ users, setSelectedLecturer }: Props) => {
+const UsersOverviewTable: React.FC<Props> = ({ users, setSelectedUser }: Props) => {
     const [nameFilter, setNameFilter] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
@@ -42,7 +42,7 @@ const LecturersOverviewTable: React.FC<Props> = ({ users, setSelectedLecturer }:
                                         <tr
                                             className={index === currentIndex ? 'table-active' : ''}
                                             onClick={() => {
-                                                setSelectedLecturer(user);
+                                                setSelectedUser(user);
                                                 setCurrentIndex(index);
                                             }}
                                             key={index}
@@ -59,4 +59,4 @@ const LecturersOverviewTable: React.FC<Props> = ({ users, setSelectedLecturer }:
     );
 };
 
-export default LecturersOverviewTable;
+export default UsersOverviewTable;
