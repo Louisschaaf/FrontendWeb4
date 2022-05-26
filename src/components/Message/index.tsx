@@ -4,6 +4,7 @@ import MessageService from '../../services/MessageService';
 import { Message, User } from '../../types';
 //import CoursesOverviewTable from './CoursesOverviewTable';
 import MessageOverviewList from './MessageOverview';
+import Status from '../Status/ChangeStatus';
 
 const MessageOverview: React.FC = () => {
     const token = sessionStorage.getItem('token');
@@ -26,10 +27,10 @@ const MessageOverview: React.FC = () => {
 
     return (
         <section className="row justify-content-center">
-            <MessageOverviewList
-                messages={messages}
-                
-            />
+            <div className='DifferentService'><Status/></div>
+            <div className='DifferentService'>
+                <MessageOverviewList messages={messages}/>
+            </div>
             {selectedMessage}
         </section>
     );
