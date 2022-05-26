@@ -6,8 +6,7 @@ import axios from 'axios';
 //export default function Login({ setToken }: { setToken: (token: any) => void }) {
 const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
-
-
+    
     const loginUser = async ( username: string) => {
         /*return fetch('http://localhost:3306/login', {
             method: 'POST',
@@ -29,6 +28,7 @@ const Login: React.FC = () => {
            return error;
        }
     }
+
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         let token = await loginUser(username);
