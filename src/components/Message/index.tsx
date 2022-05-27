@@ -29,10 +29,8 @@ const MessageOverview: React.FC = () => {
     return (
         <section className="row justify-content-center">
             <div className='DifferentService'><Status/></div>
-            <div className='DifferentService'>
-                <MessageOverviewList messages={messages}/>
-                <PublishMessage/>
-            </div>
+            <div className='DifferentService'><PublishMessage/></div>
+            <div className='DifferentService'><MessageOverviewList messages={messages}/></div>
             {selectedMessage}
         </section>
     );

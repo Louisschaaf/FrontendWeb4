@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Message } from '../../types';
 import { AxiosResponse } from 'axios';
 import MessageService from '../../services/MessageService';
+import "./message.css";
 
 const PublishMessage: React.FC = () => {
   const token = sessionStorage.getItem('token');
@@ -31,19 +32,22 @@ const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
   }
 };
   return(
-    <div className="login-wrapper">
-      <h1>Publish Message</h1>
-      <form id="formPublishMessage" onSubmit={handleStatusSubmit}>
-        <label>
-            <p>Publish Message</p>
-            <input type="text" onChange={e => setType(e.target.value)}/>
-            <textarea form="formPublishMessage" maxLength={256} value={text} onChange={(event) => setText(event.target.value)}/>
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+  <div className="login-wrapper">
+  <h2>Publish Message</h2>
+  <form id="publishMessageForm">
+    <div className="user-box">
+    <label className='labelMessageForm'>Type</label>
+      <input type="text" name="Type:" />
     </div>
+    <div className="user-box">
+    <label className='labelMessageForm'>Text</label>
+      <textarea form="publishMessageForm" name="Text:"/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
   )
 };
 

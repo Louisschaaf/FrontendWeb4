@@ -34,17 +34,16 @@ const Status: React.FC = () => {
 
   return(
     <div className="login-wrapper">
-      <h1>Change your status here</h1>
-      <form onSubmit={handleStatusSubmit}>
-        <label>
-            <p>Status</p>
-            <input type="text" onChange={e => setStatus(e.target.value.toLocaleLowerCase())}/>
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <h2>Change User Status</h2>
+    <form id="publishMessageForm">
+      <div className="user-box">
+      <label className='labelMessageForm'>Status</label>
+        <input type="text" name="Type:" />
+        <button type="submit">Submit</button>
+      </div>
+
+    </form> 
+    </div>  
   )
 };
 
