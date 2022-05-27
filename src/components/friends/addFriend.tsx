@@ -29,7 +29,7 @@ const AddFriend: React.FC = () => {
 
   return(
     <div className="login-wrapper">
-      <h1>Add Friends here</h1>
+      <h1>Friends</h1>
       <form onSubmit={handleStatusSubmit}>
         <label>
             <p>Add Friend</p>

@@ -17,10 +17,8 @@ return (
         <a className="fs-2 d-flex justify-content-center mb-2 mb-lg-0 text-white-50 text-decoration-none" href="/"> Studentbook </a>
         <nav>
             <ul className="nav justify-content-center">
-                <li> <Link to="/users" className="nav-link px-4 fs-5 text-white"> Overview </Link></li>
-                <li> <Link to="/" className="nav-link px-4 fs-5 text-white"> Add friend </Link> </li>
-                <li> <Link to="/friends" className="nav-link px-4 fs-5 text-white"> Friend overview </Link> </li>
-                <li> <Link to="/messages" className="nav-link px-4 fs-5 text-white"> Message overview </Link> </li>
+                <li> <Link to="/users" className="nav-link px-4 fs-5 text-white"> Users </Link></li>
+                <li> <Link to="/messages" className="nav-link px-4 fs-5 text-white"> Overview </Link> </li>
             </ul>
         </nav>
     </header>
@@ -29,7 +27,6 @@ return (
         <Routes>
             <Route path="/" element={< UserOverview />} />
             <Route path="/users" element={< UserOverview />} />
-            <Route path="/friends" element={<FriendOverview />} />
             <Route path="/messages" element={<MessageOverview  />} />
         </Routes>
     </main>

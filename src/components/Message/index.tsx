@@ -6,6 +6,7 @@ import { Message, User } from '../../types';
 import MessageOverviewList from './MessageOverview';
 import Status from '../Status/ChangeStatus';
 import PublishMessage from './PublishMessage';
+import FriendOverview from '../friends';
 
 const MessageOverview: React.FC = () => {
     const token = sessionStorage.getItem('token');
@@ -30,6 +31,7 @@ const MessageOverview: React.FC = () => {
         <section className="row justify-content-center">
             <div className='DifferentService'><Status/></div>
             <div className='DifferentService'><PublishMessage/></div>
+            <div className='DifferentService'><FriendOverview/></div>
             <div className='DifferentService'>
             <div className="login-wrapper">
              <h2 className='header2'>Friends Messages</h2>

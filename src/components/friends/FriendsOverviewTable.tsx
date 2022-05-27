@@ -9,9 +9,6 @@ type Props = {
 const FriendsOverviewTable: React.FC<Props> = ({ friends, setSelectedFriend }: Props) => {
     const [nameFilter, setNameFilter] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
-
-    
-
     return (
         <>
             <div className="w-100 d-none d-md-block" />
@@ -21,17 +18,12 @@ const FriendsOverviewTable: React.FC<Props> = ({ friends, setSelectedFriend }: P
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th className="text-center" scope="col">
-                                    LoggedIn
-                                </th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             {friends &&
                                 friends
-                                    .filter(({ name }) =>
-                                        name.toLowerCase().includes(nameFilter.toLowerCase())
-                                    )
                                     .map((friend, index) => (
                                         <tr
                                             className={index === currentIndex ? 'table-active' : ''}
@@ -40,11 +32,10 @@ const FriendsOverviewTable: React.FC<Props> = ({ friends, setSelectedFriend }: P
                                                 setCurrentIndex(index);
                                             }}
                                             key={index}
-                                            role="button"
-                                        >
+                                            role="button">
                                             <td>{friend.name}</td>
-                                        </tr>
-                                    ))}
+                                            <td>{friend.status}</td>
+                                        </tr>))}
                         </tbody>
                     </table>
                 )}

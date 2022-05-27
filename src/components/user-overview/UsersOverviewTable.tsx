@@ -27,9 +27,7 @@ const UsersOverviewTable: React.FC<Props> = ({ users, setSelectedUser }: Props) 
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th className="text-center" scope="col">
-                                    LoggedIn
-                                </th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,6 +47,7 @@ const UsersOverviewTable: React.FC<Props> = ({ users, setSelectedUser }: Props) 
                                             role="button"
                                         >
                                             <td>{user.name}</td>
+                                            <td>{user.status}</td>
                                         </tr>
                                     ))}
                         </tbody>
