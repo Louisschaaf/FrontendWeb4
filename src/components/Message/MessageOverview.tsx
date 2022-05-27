@@ -12,12 +12,12 @@ const MessageOverviewList: React.FC<Props> = ( {messages}) => {
     return (
         <>
             <div className="w-100 d-none d-md-block" />
-            <div className="col-6">
-                <ul>
+            <div id='messages'>
+                <ul className='messageList'>
                 {messages &&
                     messages
                     .map((message, index) => (
-                        <li className="post">
+                        <li className='post'>
                             <p>user says: </p>
                             <p>{message.text}</p>
                             <p>sent: {message.date_sent}</p>

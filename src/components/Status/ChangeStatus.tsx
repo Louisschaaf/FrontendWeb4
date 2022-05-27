@@ -29,7 +29,7 @@ const Status: React.FC = () => {
     };
 
   return(
-    <div className="login-wrapper">
+    <div className="DifferentService">
       <h1>Change your status here</h1>
       <form onSubmit={handleStatusSubmit}>
         <label>

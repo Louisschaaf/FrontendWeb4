@@ -8,6 +8,8 @@ import useToken from './components/App/useToken';
 import FriendsOverviewTable from './components/friends/FriendsOverviewTable';
 import FriendOverview from './components/friends/index';
 import MessageOverview from './components/Message/index';
+import Status from './components/Status/ChangeStatus';
+import PublishMessage from './components/Message/PublishMessage';
 
 function App() {
 return (
@@ -26,12 +28,21 @@ return (
     </header>
     {sessionStorage.getItem('token') !== null ? (
     <main className="container mt-5">
-        <Routes>
-            <Route path="/" element={< UserOverview />} />
-            <Route path="/users" element={< UserOverview />} />
-            <Route path="/friends" element={<FriendOverview />} />
-            <Route path="/messages" element={<MessageOverview  />} />
-        </Routes>
+        <div id='wrap'>
+            <div id='window1' className='window'><MessageOverview/></div>
+            <div id='window2' className='window'>
+                <div id='pane1' className='pane'>
+                    <Status/>
+                </div>
+                <div className='pane'>
+                    <PublishMessage/>
+                </div>
+                <div className='pane' >
+                    <FriendOverview/>
+                </div>
+            </div>
+        </div>
+        
     </main>
     ) : (<Login />)}
     

@@ -50,3 +50,33 @@
     max-width: 300px;
     margin: auto;
 }
+.window { 
+    width:50%;
+    position:relative;
+    float:left;
+    height:100%;
+  
+  }
+  .pane { 
+    width: 100%;
+    position: relative;
+    height: 50%;
+    text-align: right;
+   }
+   #pane3{
+     height: 100%;
+   }
+  #window1 {
+        
+  }
+  #window2 {
+  }
+  .messageList {
+      padding-right: 2rem;
+  }
+  
+  #wrap {
+    height: 100%;
+    position: relative;
+    
+}

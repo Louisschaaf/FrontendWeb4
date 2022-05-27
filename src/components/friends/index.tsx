@@ -27,8 +27,8 @@ const FriendOverview: React.FC = () => {
     
 
     return (
-        
-        <section className="row justify-content-center">
+        <div id='pane3' className='DifferentService'>
+            <section className="row justify-content-center">
             <AddFriend/>
             <FriendsOverviewTable
                 friends={friends}
@@ -36,6 +36,8 @@ const FriendOverview: React.FC = () => {
             />
             {selectedFriend}
         </section>
+        </div>
+        
     );
 };
 

@@ -11,6 +11,7 @@ const PublishMessage: React.FC = () => {
   const [type, setType] = useState<string>();
 
   const publishMessage = async (User_ID: number, text_message: string, type_message: string) => {
+    console.log(UserID);
     const res: AxiosResponse<Message> = await MessageService.publishMessage(User_ID, text_message, type_message);
 };
 
@@ -21,7 +22,7 @@ const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
   }
 };
   return(
-    <div className="login-wrapper">
+    <div className="DifferentService">
       <h1>Publish Message</h1>
       <form id="formPublishMessage" onSubmit={handleStatusSubmit}>
         <label>
