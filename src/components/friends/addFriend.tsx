@@ -11,14 +11,11 @@ const AddFriend: React.FC = () => {
   const [friendName, setFriendName] = useState<string>();
 
   const addFriend = async (name: string) => {
-      console.log("hit addFriend");
     const res: AxiosResponse<User> = await FriendsService.addFriend(UserID, name);
     setFriend(res.data);
 };
 
     const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
-        console.log("hit handleStatusSubmit");
-        console.log(friendName);
         e.preventDefault();
         if (friendName) {
             addFriend(friendName);
@@ -29,7 +26,7 @@ const AddFriend: React.FC = () => {
 
   return(
     <div className="login-wrapper">
-      <h1>Add Friends here</h1>
+      <h1>Friends</h1>
       <form onSubmit={handleStatusSubmit}>
         <label>
             <p>Add Friend</p>

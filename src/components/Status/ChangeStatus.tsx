@@ -21,31 +21,29 @@ const Status: React.FC = () => {
 
     const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        if (status == "offline" || status== "busy" || status == "online" || status == "inactive"){
         let statusCheck = await changeStatusUser(status);
         if (statusCheck["status"] === "error") {
             alert("Wrong Status Selected");
             statusCheck = "error";
+        }}
+        else{
+          alert("Wrong status inserted for the user.")
         }
     };
 
   return(
-    <div className="DifferentService">
-      <h1>Change your status here</h1>
-      <form onSubmit={handleStatusSubmit}>
-        <label>
-            <p>Status</p>
-            <select onChange={e => setStatus(e.target.value)}>
-              <option value="offline">Offline</option>
-              <option defaultValue={"online"}>Online</option>
-              <option value="inactive">Inactive</option>
-              <option value="busy">Busy</option>
-            </select>
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <div className="login-wrapper">
+    <h2>Change User Status</h2>
+    <form id="publishMessageForm" onSubmit={handleStatusSubmit}>
+      <div className="user-box">
+      <label className='labelMessageForm'>Status</label>
+        <input type="text" onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
+        <button type="submit">Submit</button>
+      </div>
+
+    </form> 
+    </div>  
   )
 };
 

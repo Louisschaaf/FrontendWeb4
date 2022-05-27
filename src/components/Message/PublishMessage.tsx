@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Message } from '../../types';
 import { AxiosResponse } from 'axios';
 import MessageService from '../../services/MessageService';
+import "./message.css";
 
 const PublishMessage: React.FC = () => {
   const token = sessionStorage.getItem('token');
@@ -15,29 +16,39 @@ const PublishMessage: React.FC = () => {
     const res: AxiosResponse<Message> = await MessageService.publishMessage(User_ID, text_message, type_message);
 };
 
-const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
+const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
   e.preventDefault();
-  if (type && UserID && (text && text.toString.length < 256)) {
-    publishMessage(UserID, text, type)
+  if (type && type.match("public" || "private")){
+    if (text && text.toString.length < 256){
+      if (UserID){
+        publishMessage(UserID, text, type)
+      }else{
+        alert("Something Wrong with the user")
+      }
+    }else{
+      alert(text + " : Wrong Text Inserted")
+    }
+  }else{
+    alert( type +" : Wrong Type Inserted");
   }
 };
   return(
-    <div className="DifferentService">
-      <h1>Publish Message</h1>
-      <form id="formPublishMessage" onSubmit={handleStatusSubmit}>
-        <label>
-            <p>Publish Message</p>
-            <select onChange={e => setType(e.target.value)}>
-              <option defaultValue={"Public"}>Public</option>
-              <option value="Private">Private</option>
-            </select>
-            <textarea form="formPublishMessage" maxLength={256} value={text} onChange={(event) => setText(event.target.value)}/>
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+  <div className="login-wrapper">
+  <h2>Publish Message</h2>
+  <form id="publishMessageForm" onSubmit={handleMessageSubmit}>
+    <div className="user-box">
+    <label className='labelMessageForm'>Type</label>
+      <input type="text" onChange={e => setType(e.target.value.trim().toLocaleLowerCase())} />
     </div>
+    <div className="user-box">
+    <label className='labelMessageForm'>Text</label>
+      <textarea form="publishMessageForm" onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
   )
 };
 
