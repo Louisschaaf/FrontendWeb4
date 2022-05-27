@@ -8,21 +8,13 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     
     const loginUser = async ( username: string) => {
-        /*return fetch('http://localhost:3000/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(credentials)
-        })
-            .then(response => response.json())
-        */
        try {
            const res = await axios.post<Response>('http://localhost:3000/user/login', {name: username});
            sessionStorage.setItem('token', JSON.stringify(res.data));
            window.location.reload();
            return {status: 'success'};
        } catch (error: any) {
+         alert("Wrong Username Entered")
            return error;
        }
     }
