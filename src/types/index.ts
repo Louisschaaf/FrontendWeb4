@@ -1,17 +1,14 @@
 export interface User {
     user_id: number;
     name: string;
-    friends: User[];
-    Messages: Message[];
-    //Chats: Chat[];
-    LoggedIn: boolean;
+    status: "online" | "busy" | "offline" | "onactive";
 }
 
 export interface Message {
     message_id: number;
+    author: number;
     text: string;
     date_sent: EpochTimeStamp;
-    author: User;
     type: "Private" | "Public";
 }
 
@@ -20,4 +17,3 @@ export interface Chat {
     users: User[];
     messages: Message[];
 }
-

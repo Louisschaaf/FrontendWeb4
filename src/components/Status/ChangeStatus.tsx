@@ -36,7 +36,7 @@ const Status: React.FC = () => {
             <p>Status</p>
             <select onChange={e => setStatus(e.target.value)}>
               <option value="offline">Offline</option>
-              <option value="online">Online</option>
+              <option defaultValue={"online"}>Online</option>
               <option value="inactive">Inactive</option>
               <option value="busy">Busy</option>
             </select>
