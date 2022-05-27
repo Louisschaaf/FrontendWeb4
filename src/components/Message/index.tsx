@@ -30,7 +30,11 @@ const MessageOverview: React.FC = () => {
         <section className="row justify-content-center">
             <div className='DifferentService'><Status/></div>
             <div className='DifferentService'><PublishMessage/></div>
-            <div className='DifferentService'><MessageOverviewList messages={messages}/></div>
+            <div className='DifferentService'>
+            <div className="login-wrapper">
+             <h2 className='header2'>Friends Messages</h2>
+            <MessageOverviewList messages={messages}/></div>
+            </div>
             {selectedMessage}
         </section>
     );
