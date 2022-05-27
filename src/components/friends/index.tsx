@@ -2,6 +2,7 @@ import { AxiosResponse } from 'axios';
 import React, { useState, useEffect } from 'react';
 import FriendsService from '../../services/FriendsService';
 import { User } from '../../types';
+import AddFriend from './addFriend';
 //import CoursesOverviewTable from './CoursesOverviewTable';
 import FriendsOverviewTable from './FriendsOverviewTable';
 
@@ -23,9 +24,12 @@ const FriendOverview: React.FC = () => {
         console.log("friends:",res);
         setFriends(res.data);
     };
+    
 
     return (
+        
         <section className="row justify-content-center">
+            <AddFriend/>
             <FriendsOverviewTable
                 friends={friends}
                 setSelectedFriend={setSelectedFriend}

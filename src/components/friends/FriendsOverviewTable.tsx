@@ -10,16 +10,10 @@ const FriendsOverviewTable: React.FC<Props> = ({ friends, setSelectedFriend }: P
     const [nameFilter, setNameFilter] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
+    
+
     return (
         <>
-            <div className="col-4 mb-3">
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Filter by name"
-                    onChange={(event) => setNameFilter(event.target.value)}
-                />
-            </div>
             <div className="w-100 d-none d-md-block" />
             <div className="col-6">
                 {friends && (

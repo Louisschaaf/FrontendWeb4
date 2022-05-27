@@ -3,7 +3,7 @@ import { User } from '../types';
 
 const getAllFriends = (UserID: number) => axios.get<Array<User>>('/friends', { params: { UserID } });
 
-const addFriend = (friendID: number) => axios.post<User>('/friends', { friendID });
+const addFriend = (UserID: number, friendName: string) => axios.post<User>('/friends', { friendName, UserID });
 
 const FriendsService = {
     getAllFriends,
