@@ -15,9 +15,9 @@ const PublishMessage: React.FC = () => {
     const res: AxiosResponse<Message> = await MessageService.publishMessage(User_ID, text_message, type_message);
 };
 
-const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
+const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
   e.preventDefault();
-  if (type && type.match("Public" || "Private")){
+  if (type && type.match("public" || "private")){
     if (text && text.toString.length < 256){
       if (UserID){
         publishMessage(UserID, text, type)
@@ -25,23 +25,23 @@ const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
         alert("Something Wrong with the user")
       }
     }else{
-      alert("Wrong Text Inserted")
+      alert(text + " : Wrong Text Inserted")
     }
   }else{
-    alert("Wrong Type Inserted");
+    alert( type +" : Wrong Type Inserted");
   }
 };
   return(
   <div className="login-wrapper">
   <h2>Publish Message</h2>
-  <form id="publishMessageForm">
+  <form id="publishMessageForm" onSubmit={handleMessageSubmit}>
     <div className="user-box">
     <label className='labelMessageForm'>Type</label>
-      <input type="text" name="Type:" />
+      <input type="text" onChange={e => setType(e.target.value.trim().toLocaleLowerCase())} />
     </div>
     <div className="user-box">
     <label className='labelMessageForm'>Text</label>
-      <textarea form="publishMessageForm" name="Text:"/>
+      <textarea form="publishMessageForm" onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
     </div>
     <div>
         <button type="submit">Submit</button>

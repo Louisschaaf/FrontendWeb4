@@ -35,10 +35,10 @@ const Status: React.FC = () => {
   return(
     <div className="login-wrapper">
     <h2>Change User Status</h2>
-    <form id="publishMessageForm">
+    <form id="publishMessageForm" onSubmit={handleStatusSubmit}>
       <div className="user-box">
       <label className='labelMessageForm'>Status</label>
-        <input type="text" name="Type:" />
+        <input type="text" onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
         <button type="submit">Submit</button>
       </div>
 

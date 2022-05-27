@@ -11,14 +11,11 @@ const AddFriend: React.FC = () => {
   const [friendName, setFriendName] = useState<string>();
 
   const addFriend = async (name: string) => {
-      console.log("hit addFriend");
     const res: AxiosResponse<User> = await FriendsService.addFriend(UserID, name);
     setFriend(res.data);
 };
 
     const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
-        console.log("hit handleStatusSubmit");
-        console.log(friendName);
         e.preventDefault();
         if (friendName) {
             addFriend(friendName);

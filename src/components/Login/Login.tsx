@@ -18,9 +18,7 @@ const Login: React.FC = () => {
             .then(response => response.json())
         */
        try {
-           console.log(username);
            const res = await axios.post<Response>('http://localhost:3000/user/login', {name: username});
-           console.log(res);
            sessionStorage.setItem('token', JSON.stringify(res.data));
            window.location.reload();
            return {status: 'success'};
