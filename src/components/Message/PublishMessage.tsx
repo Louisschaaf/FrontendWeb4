@@ -16,8 +16,18 @@ const PublishMessage: React.FC = () => {
 
 const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
   e.preventDefault();
-  if (type && UserID && (text && text.toString.length < 256)) {
-    publishMessage(UserID, text, type)
+  if (type && type.match("Public" || "Private")){
+    if (text && text.toString.length < 256){
+      if (UserID){
+        publishMessage(UserID, text, type)
+      }else{
+        alert("Something Wrong with the user")
+      }
+    }else{
+      alert("Wrong Text Inserted")
+    }
+  }else{
+    alert("Wrong Type Inserted");
   }
 };
   return(
@@ -26,10 +36,7 @@ const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
       <form id="formPublishMessage" onSubmit={handleStatusSubmit}>
         <label>
             <p>Publish Message</p>
-            <select onChange={e => setType(e.target.value)}>
-              <option defaultValue={"Public"}>Public</option>
-              <option value="Private">Private</option>
-            </select>
+            <input type="text" onChange={e => setType(e.target.value)}/>
             <textarea form="formPublishMessage" maxLength={256} value={text} onChange={(event) => setText(event.target.value)}/>
         </label>
         <div>
