@@ -74,9 +74,15 @@
   .messageList {
       padding-right: 2rem;
   }
-  
+  #messages {
+      width: 100%;
+
+  }
   #wrap {
     height: 100%;
     position: relative;
     
+}
+.addFriendInput {
+    display: inline;
 }

@@ -33,19 +33,19 @@ const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
   }
 };
   return(
-  <div className="login-wrapper">
+  <div className="DifferentService">
   <h2>Publish Message</h2>
   <form id="publishMessageForm" onSubmit={handleMessageSubmit}>
     <div className="user-box">
-    <label className='labelMessageForm'>Type</label>
-      <input type="text" onChange={e => setType(e.target.value.trim().toLocaleLowerCase())} />
+    <label className='labelMessageForm'></label>
+      <input type="text" value={"Type"} onChange={e => setType(e.target.value.trim().toLocaleLowerCase())} />
     </div>
     <div className="user-box">
-    <label className='labelMessageForm'>Text</label>
-      <textarea form="publishMessageForm" onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
+    <label className='labelMessageForm'></label>
+      <textarea form="publishMessageForm" value={"Message"} onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
     </div>
     <div>
-        <button type="submit">Submit</button>
+        <button type="submit">Publish</button>
     </div>
   </form>
 </div>

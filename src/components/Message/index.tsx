@@ -28,6 +28,7 @@ const MessageOverview: React.FC = () => {
     return (
         <section className="row justify-content-center">
             <div className='DifferentService'>
+            <h2>Messages</h2>
                 <MessageOverviewList messages={messages}/>
                 
             </div>

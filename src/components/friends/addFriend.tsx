@@ -27,10 +27,9 @@ const AddFriend: React.FC = () => {
   return(
     <div className="login-wrapper">
       <h1>Friends</h1>
-      <form onSubmit={handleStatusSubmit}>
+      <form onSubmit={handleStatusSubmit} className='addFriendInput'>
         <label>
-            <p>Add Friend</p>
-            <input type="text" maxLength={30} value={friendName} 
+            <input type="text"  maxLength={30} value={"Name"} 
             onChange={(event) => setFriendName(event.target.value)}/>
         </label>
         <div>

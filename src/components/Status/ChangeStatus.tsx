@@ -8,6 +8,7 @@ const Status: React.FC = () => {
   const token = sessionStorage.getItem('token');
   const JSONtoken = JSON.parse((token) ? token : '{}');
   const UserID = (JSONtoken) ? JSONtoken["user"]["user_id"] : null;
+  const UserStatus = (JSONtoken) ? JSONtoken["user"]["status"] : null;
   const [status, setStatus] = useState<string>('');
   const changeStatusUser = async ( status: string) => {
     try {
@@ -33,13 +34,13 @@ const Status: React.FC = () => {
     };
 
   return(
-    <div className="login-wrapper">
-    <h2>Change User Status</h2>
+    <div className="DifferentService">
+    <h2>My status: {UserStatus}</h2>
     <form id="publishMessageForm" onSubmit={handleStatusSubmit}>
       <div className="user-box">
-      <label className='labelMessageForm'>Status</label>
-        <input type="text" onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
-        <button type="submit">Submit</button>
+      <label className='labelMessageForm'></label>
+        <input type="text" value={"Status"} onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
+        <button type="submit">Change</button>
       </div>
 
     </form> 
