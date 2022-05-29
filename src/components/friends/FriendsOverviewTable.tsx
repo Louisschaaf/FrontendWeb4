@@ -13,7 +13,7 @@ const FriendsOverviewTable: React.FC<Props> = ({ friends }: Props) => {
         <>
             <div className="w-100 d-none d-md-block" />
             <div className="col-6">
-                {friends && (
+                {friends.length != 0 ? (             
                     <table className="table table-hover">
                         <thead>
                             <tr>
@@ -38,7 +38,8 @@ const FriendsOverviewTable: React.FC<Props> = ({ friends }: Props) => {
                                         </tr>))}
                         </tbody>
                     </table>
-                )}
+                ): ( <p>No friends added yet</p>)
+                }
             </div>
         </>
     );
