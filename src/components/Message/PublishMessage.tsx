@@ -26,10 +26,10 @@ const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
         alert("Something Wrong with the user")
       }
     }else{
-      alert(text + " : Wrong Text Inserted")
+      alert(text + " : Wrong Text Inserted: Max 255 characters")
     }
   }else{
-    alert( type +" : Wrong Type Inserted");
+    alert( type +" : Wrong Type Inserted: Need to be 'Public or 'Private'.");
   }
 };
   return(
