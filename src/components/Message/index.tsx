@@ -19,7 +19,7 @@ const MessageOverview: React.FC = () => {
 -        getAllMessages();
     }, []);
 
-    useInterval(() => { getAllMessages();}, 5000 );
+    useInterval(() => { getAllMessages();}, 2000 );
     const getAllMessages = async () => {
         const res: AxiosResponse<Array<Message>> = await MessageService.getAllMessages(userID);
         setMessages(res.data);
