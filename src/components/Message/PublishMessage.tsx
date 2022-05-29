@@ -37,7 +37,7 @@ const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
     <div className="friends">
     <h2>Publish Message</h2>
   <form id="publishMessageForm" onSubmit={handleMessageSubmit}>
-    <div className="user-box">
+    <div className="user-box" id='type'>
     <label className='labelMessageForm'></label>
       <input type="text" placeholder={"Type"} onChange={e => setType(e.target.value.trim().toLocaleLowerCase())} />
     </div>
@@ -46,7 +46,7 @@ const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
       <textarea form="publishMessageForm" maxLength={256} placeholder={"Message"} onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
     </div>
     <div>
-        <button type="submit">Publish</button>
+        <button type="submit" className='submit'>Publish</button>
     </div>
   </form>
     </div>

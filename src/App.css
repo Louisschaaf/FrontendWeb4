@@ -61,7 +61,7 @@
     width: 100%;
     position: relative;
     height: 50%;
-    text-align: right;
+    text-align: center;
    }
    #pane3{
      height: 100%;
@@ -87,5 +87,36 @@
     display: inline;
 }
 .friends {
+    height: 100%;
     align-content: center;
+}
+
+form#publishMessageForm {
+    height: 100%;
+}
+
+#publishMessageForm > div > input {
+    width: 90%;
+}
+#publishMessageForm > div > textarea {
+    width: 90%;
+    height: 100%;
+}
+#pane2 > .DifferentService {
+    height: 25rem;
+}
+html {
+    height: 100%;
+}
+.labelMessageForm > textarea {
+    height: 100%;
+}
+.user-box {
+    height: 40%; 
+}
+.user-box#type {
+    height: 10%;
+}
+.submit {
+    margin: 3%;
 }

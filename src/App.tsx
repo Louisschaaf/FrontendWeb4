@@ -29,7 +29,7 @@ return (
                 <div id='pane1' className='pane'>
                     <Status/>
                 </div>
-                <div className='pane'>
+                <div className='pane' id='pane2'>
                     <PublishMessage/>
                 </div>
                 <div className='pane' >

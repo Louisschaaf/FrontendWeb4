@@ -33,7 +33,7 @@ const AddFriend: React.FC = () => {
             onChange={(event) => setFriendName(event.target.value)}/>
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit" className='submit'>Submit</button>
         </div>
       </form>
     </div>
