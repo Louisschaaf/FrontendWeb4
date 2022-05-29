@@ -3,10 +3,10 @@ import { User } from '../../types';
 
 type Props = {
     friends: Array<User>;
-    setSelectedFriend: (friend: User) => void;
+    //setSelectedFriend: (friend: User) => void;
 };
 
-const FriendsOverviewTable: React.FC<Props> = ({ friends, setSelectedFriend }: Props) => {
+const FriendsOverviewTable: React.FC<Props> = ({ friends }: Props) => {
     const [nameFilter, setNameFilter] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
     return (
@@ -28,7 +28,7 @@ const FriendsOverviewTable: React.FC<Props> = ({ friends, setSelectedFriend }: P
                                         <tr
                                             className={index === currentIndex ? 'table-active' : ''}
                                             onClick={() => {
-                                                setSelectedFriend(friend);
+                                                //setSelectedFriend(friend);
                                                 setCurrentIndex(index);
                                             }}
                                             key={index}

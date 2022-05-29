@@ -29,10 +29,8 @@ const FriendOverview: React.FC = () => {
         <div id='pane3' className='DifferentService'>
             <section className="row justify-content-center">
             <AddFriend/>
-            <FriendsOverviewTable
-                friends={friends}
-                setSelectedFriend={setSelectedFriend}
-            />
+            { friends.length != 0 ? <FriendsOverviewTable friends={friends} /> : <p>No friends added yet.</p>}
+            
             {selectedFriend}
         </section>
         </div>

@@ -86,3 +86,6 @@
 .addFriendInput {
     display: inline;
 }
+.friends {
+    align-content: center;
+}

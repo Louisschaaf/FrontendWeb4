@@ -29,7 +29,7 @@ const MessageOverview: React.FC = () => {
         <section className="row justify-content-center">
             <div className='DifferentService'>
             <h2>Messages</h2>
-                <MessageOverviewList messages={messages}/>
+             { messages.length != 0 ? <MessageOverviewList messages={messages}/> : <p>Your friends have been quiet lately...</p>}
                 
             </div>
             {selectedMessage}

@@ -34,7 +34,8 @@ const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
 };
   return(
   <div className="DifferentService">
-  <h2>Publish Message</h2>
+    <div className="friends">
+    <h2>Publish Message</h2>
   <form id="publishMessageForm" onSubmit={handleMessageSubmit}>
     <div className="user-box">
     <label className='labelMessageForm'></label>
@@ -42,12 +43,13 @@ const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
     </div>
     <div className="user-box">
     <label className='labelMessageForm'></label>
-      <textarea form="publishMessageForm" placeholder={"Message"} onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
+      <textarea form="publishMessageForm" maxLength={256} placeholder={"Message"} onChange={e => setText(e.target.value.toLocaleLowerCase())}/>
     </div>
     <div>
         <button type="submit">Publish</button>
     </div>
   </form>
+    </div>
 </div>
   )
 };

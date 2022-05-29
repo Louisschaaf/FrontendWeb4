@@ -41,7 +41,7 @@ const Status: React.FC = () => {
     <form id="publishMessageForm" onSubmit={handleStatusSubmit}>
       <div className="user-box">
       <label className='labelMessageForm'></label>
-        <input type="text" placeholder={"Status"} onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
+        <input maxLength={30} type="text" placeholder={"Status"} onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
         <button type="submit">Change</button>
       </div>
 
