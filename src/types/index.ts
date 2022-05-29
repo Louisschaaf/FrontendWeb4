@@ -7,6 +7,7 @@ export interface User {
 export interface Message {
     message_id: number;
     author: number;
+    username: string;
     text: string;
     date_sent: EpochTimeStamp;
     type: "Private" | "Public";

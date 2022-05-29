@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import UserService from '../../services/UserService';
 import { Message } from '../../types';
 import "./message.css";
 
 type Props = {
     messages: Array<Message>;
 };
+
+
 
 const MessageOverviewList: React.FC<Props> = ( {messages}) => {
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
@@ -18,7 +21,7 @@ const MessageOverviewList: React.FC<Props> = ( {messages}) => {
                     messages
                     .map((message, index) => (
                         <li className='post'>
-                            <p>user says: </p>
+                            <p>{message.username} says: </p>
                             <p>{message.text}</p>
                             <p>sent: {message.date_sent}</p>
 
