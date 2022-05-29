@@ -18,7 +18,7 @@ const PublishMessage: React.FC = () => {
 
 const handleMessageSubmit = async (e: { preventDefault: () => void; }) => {
   e.preventDefault();
-  if (type && type.match("public" || "private")){
+  if (type && type === "public" || type === "private"){
     if (text && text.toString.length < 256){
       if (UserID){
         publishMessage(UserID, text, type)
