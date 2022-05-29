@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import FriendsService from '../../services/FriendsService';
 import { User } from '../../types';
 import AddFriend from './addFriend';
+import useInterval from 'use-interval';
 //import CoursesOverviewTable from './CoursesOverviewTable';
 import FriendsOverviewTable from './FriendsOverviewTable';
 
@@ -15,6 +16,8 @@ const FriendOverview: React.FC = () => {
     useEffect(() => {
 -        getFriends();
     }, []);
+
+    useInterval(() => { getFriends();}, 2000 );
 
     const getFriends = async () => {
         const res: AxiosResponse<Array<User>> = await FriendsService.getAllFriends(userID);
