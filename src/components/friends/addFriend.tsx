@@ -29,7 +29,7 @@ const AddFriend: React.FC = () => {
       <h1>Friends</h1>
       <form onSubmit={handleStatusSubmit} className='addFriendInput'>
         <label>
-            <input type="text"  maxLength={30} value={"Name"} 
+            <input type="text"  maxLength={30} placeholder={"Name"} 
             onChange={(event) => setFriendName(event.target.value)}/>
         </label>
         <div>

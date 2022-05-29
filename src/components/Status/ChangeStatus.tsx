@@ -14,6 +14,8 @@ const Status: React.FC = () => {
     try {
       const res = await UserService.changeStatus(status, UserID);
       window.location.reload();
+      JSONtoken["user"]["status"] = status;
+      sessionStorage.setItem('token', JSON.stringify(JSONtoken));
       return {status: 'success'};
     } catch (error: any) {
         return error;
@@ -39,7 +41,7 @@ const Status: React.FC = () => {
     <form id="publishMessageForm" onSubmit={handleStatusSubmit}>
       <div className="user-box">
       <label className='labelMessageForm'></label>
-        <input type="text" value={"Status"} onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
+        <input type="text" placeholder={"Status"} onChange={e => setStatus(e.target.value.trim().toLocaleLowerCase())} />
         <button type="submit">Change</button>
       </div>
 
