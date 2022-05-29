@@ -24,7 +24,7 @@ const Status: React.FC = () => {
 
     const handleStatusSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        if (status == "offline" || status== "busy" || status == "online" || status == "inactive"){
+        if ((status == "offline" || status== "busy" || status == "online" || status == "inactive") && status.length < 30){
         let statusCheck = await changeStatusUser(status);
         if (statusCheck["status"] === "error") {
             alert("Wrong Status Selected");

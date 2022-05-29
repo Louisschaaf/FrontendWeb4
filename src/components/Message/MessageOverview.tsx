@@ -11,11 +11,11 @@ type Props = {
 
 const MessageOverviewList: React.FC<Props> = ( {messages}) => {
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
-
     return (
         <>
             <div className="w-100 d-none d-md-block" />
             <div id='messages'>
+            {messages.length != 0 ? (
                 <ul className='messageList'>
                 {messages &&
                     messages
@@ -27,9 +27,10 @@ const MessageOverviewList: React.FC<Props> = ( {messages}) => {
 
                         </li>
                     ))}
-                </ul>
-            
-            </div>
+                </ul>) : 
+        <p>Your friends have been quiet lately…</p>
+        }
+        </div>
         </>
     );
 };
